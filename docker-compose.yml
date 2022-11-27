@@ -1,13 +1,14 @@
 version: "3.9"
 
 services:
-  promobot_bot:
-    container_name: promobot_bot
+  promobot:
+    container_name: promobot
     restart: always
     ports:
       - "8888:4444"
     volumes:
       - ./db_files:/bot/db_files
+      - ./вопросы-ответы.txt:/bot/вопросы-ответы.txt
     build: .
     command: ['python', 'main.py', 'fill_db']
 
