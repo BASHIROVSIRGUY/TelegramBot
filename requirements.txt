@@ -1,0 +1,7 @@
+aiofiles==22.1.0
+aiogram==2.23.1
+aiosqlite==0.17.0
+asyncio==3.4.3
+pyaspeller==0.2.3
+pymorphy2==0.9.1
+python-dotenv==0.21.0

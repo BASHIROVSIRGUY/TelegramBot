@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  promobot_bot:
+    container_name: promobot_bot
+    restart: always
+    ports:
+      - "8888:4444"
+    volumes:
+      - ./db_files:/bot/db_files
+    build: .
+    command: ['python', 'main.py', 'fill_db']
+
