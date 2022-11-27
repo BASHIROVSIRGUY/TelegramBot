@@ -6,8 +6,10 @@ import aiosqlite
 class DataBase:
     @classmethod
     async def get_db_obj(cls, loop=None):
-        file_path = './db_files/dialog.db'
-        connector = await aiosqlite.connect(file_path)
+        db_folder = './db_files'
+        if not os.path.exists(db_folder):
+            os.makedirs(db_folder)
+        connector = await aiosqlite.connect(db_folder+"/dialog.db")
         return cls(connector=connector, loop=loop)
 
     def __init__(self, connector, loop=None):
